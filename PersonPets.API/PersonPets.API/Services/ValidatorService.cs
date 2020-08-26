@@ -6,9 +6,9 @@ using PersonPets.API.Services.Interfaces;
 
 namespace PersonPets.API.Services
 {
-    public class PeopleValidatorService : AbstractValidator<Person>, IValidatorService<Person>
+    public class ValidatorService : AbstractValidator<Person>, IValidatorService<Person>
     {
-        public PeopleValidatorService()
+        public ValidatorService()
         {
             //Validation rules defined here
             RuleFor(x => x.Age).GreaterThan(0).WithMessage(Constants.AgeGreaterThanZero);

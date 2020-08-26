@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PersonPets.API.Services.Interfaces
 {
-    interface IValidatorService<T>
+    public interface IValidatorService<T>
     {
         /// <summary>
         /// Validates the List of given type 

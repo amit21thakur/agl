@@ -63,7 +63,9 @@ namespace PersonPets.API
         {
             services.AddScoped<IApiClient, ApiClient>();
             services.AddScoped<IPeopleApiClient, PeopleApiClient>();
-            services.AddScoped<IValidatorService<Person>, PeopleValidatorService>();
+
+            services.AddScoped<IValidatorService<Person>, ValidatorService>();
+            services.AddScoped<IPeopleService, PeopleService>();
         }
     }
 }
