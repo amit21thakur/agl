@@ -11,6 +11,7 @@ using PersonPets.API.Common.Interfaces;
 using PersonPets.API.Models;
 using PersonPets.API.Services;
 using PersonPets.API.Services.Interfaces;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace PersonPets.API
 {
@@ -31,7 +32,7 @@ namespace PersonPets.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AGL Test Api", Version = "v1" });
             });
-
+            ConfigureCors(services);
             RegisterServices(services);
         }
 
@@ -52,7 +53,7 @@ namespace PersonPets.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors("CorsPolicy");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -69,6 +70,25 @@ namespace PersonPets.API
 
             services.AddScoped<IValidatorService<Person>, ValidatorService>();
             services.AddScoped<IPeopleService, PeopleService>();
+        }
+
+        protected void ConfigureCors(IServiceCollection services, string origin = null)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.AllowAnyMethod().AllowAnyHeader();
+                    if (string.IsNullOrEmpty(origin))
+                    {
+                        builder.AllowAnyOrigin();
+                    }
+                    else
+                    {
+                        builder.WithOrigins(origin);
+                    }
+                });
+            });
         }
     }
 }
