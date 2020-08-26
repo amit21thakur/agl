@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonPets.API", "PersonPet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonPets.Test", "PersonPets.Test\PersonPets.Test.csproj", "{414F8CA3-21A5-4F4D-9443-B7888813B20F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonPets.UnitTest", "PersonPets.UnitTest\PersonPets.UnitTest.csproj", "{E2DFA5EC-B4B1-4E0B-98AD-1E2FE7C66D81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{414F8CA3-21A5-4F4D-9443-B7888813B20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{414F8CA3-21A5-4F4D-9443-B7888813B20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{414F8CA3-21A5-4F4D-9443-B7888813B20F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2DFA5EC-B4B1-4E0B-98AD-1E2FE7C66D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2DFA5EC-B4B1-4E0B-98AD-1E2FE7C66D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2DFA5EC-B4B1-4E0B-98AD-1E2FE7C66D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2DFA5EC-B4B1-4E0B-98AD-1E2FE7C66D81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,3 +5,5 @@ PersonPets.API/PersonPets.API/obj
 PersonPets.API/PersonPets.API/PersonPets.API.csproj.user
 PersonPets.API/PersonPets.Test/bin
 PersonPets.API/PersonPets.Test/obj
+PersonPets.API/PersonPets.UnitTest/bin
+PersonPets.API/PersonPets.UnitTest/obj
