@@ -1,1 +1,7 @@
-<p>pets works!</p>
+<div class="col-sm-4" >
+    <h3>{{pets.ownerGender}}</h3>
+    <ul>
+      <li *ngFor="let pet of pets.petNames">{{pet}}</li>
+    </ul>
+  </div>
+  

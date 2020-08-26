@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
+import { ResultItem } from 'src/app/models/result.item.model';
 
 @Component({
   selector: 'app-pets',
@@ -11,5 +12,15 @@ export class PetsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  private _pets:ResultItem;
+  get pets() {
+    return this._pets;
+  }
+  @Input()
+  set pets(pets:ResultItem) {
+    this._pets = pets;
+  }
+  
 
 }
