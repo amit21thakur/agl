@@ -32,12 +32,12 @@ namespace PersonPets.API.Controllers
             catch(ValidationException ex)
             {
                 _logger.LogError(ex, "Internal validaion failed while getting Pet Names data based upon owners gender");
-                return StatusCode((int)HttpStatusCode.BadRequest);
+                return StatusCode((int)HttpStatusCode.InternalServerError);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Failed while getting Pet Names data based upon owners gender");
-                return StatusCode((int)HttpStatusCode.InternalServerError);
+                return StatusCode((int)HttpStatusCode.BadRequest);
             }
         }
     }

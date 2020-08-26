@@ -3,3 +3,5 @@ PersonPets.API/.vs
 PersonPets.API/PersonPets.API/bin
 PersonPets.API/PersonPets.API/obj
 PersonPets.API/PersonPets.API/PersonPets.API.csproj.user
+PersonPets.API/PersonPets.Test/bin
+PersonPets.API/PersonPets.Test/obj

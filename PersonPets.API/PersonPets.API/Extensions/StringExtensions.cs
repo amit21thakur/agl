@@ -18,7 +18,7 @@ namespace PersonPets.API.Extensions
                     builder.Append(" ");
                 else
                 {
-                    var lower = str.ToLower();
+                    var lower = tokens[i].ToLower();
                     builder.AppendFormat("{0}{1}", lower.Substring(0, 1).ToUpper(), lower.Substring(1));
                 }
             }
