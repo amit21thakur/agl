@@ -1,0 +1,20 @@
+<div class="jumbotron text-center">
+  <h1>AGL Coding Test</h1>
+</div>
+<div>
+  Cats list by owner gender
+</div>
+<div class="container">
+  <div class="row">
+        <div class="col-sm-2" ></div>
+        <ng-container *ngIf="!HasError; else onError">
+          <app-pets *ngFor="let petData of petsForGender" [pets]="petData"></app-pets>
+        </ng-container>
+        <ng-template #onError>
+          <div class="col-sm-8 alert alert-danger" >
+            <strong>Error loading data!</strong>
+          </div>  
+        </ng-template>
+        <div class="col-sm-2" ></div>
+  </div>
+</div>
