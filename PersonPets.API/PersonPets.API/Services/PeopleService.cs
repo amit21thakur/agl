@@ -7,6 +7,7 @@ using PersonPets.API.ApiClients.Interfaces;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.Extensions.Logging;
+using System.Text;
 
 namespace PersonPets.API.Services
 {
@@ -43,8 +44,8 @@ namespace PersonPets.API.Services
                  from pet in person.Pets.Where(p => p.Species.Trim().ToLower() == petType.ToLower())
                  select new
                  {
-                     Gender = person.Gender.ToLower().ToTitleCase(),
-                     PetName = pet.Name.ToLower().ToTitleCase()
+                     Gender = person.Gender.ToTitleCase(),
+                     PetName = pet.Name.ToTitleCase()
                  })
                 .OrderByDescending(d => d.Gender)
                 .ThenBy(d => d.PetName)
@@ -76,5 +77,6 @@ namespace PersonPets.API.Services
             }
             return ownerPetsData;
         }
+
     }
 }

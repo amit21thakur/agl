@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using PersonPets.API.ApiClients;
 using PersonPets.API.ApiClients.Interfaces;
+using PersonPets.API.Common;
+using PersonPets.API.Common.Interfaces;
 using PersonPets.API.Models;
 using PersonPets.API.Services;
 using PersonPets.API.Services.Interfaces;
@@ -61,7 +63,8 @@ namespace PersonPets.API
 
         private void RegisterServices(IServiceCollection services)
         {
-            services.AddScoped<IApiClient, ApiClient>();
+            services.AddScoped<IJsonSerializer, JsonSerializer>();
+            services.AddScoped<IApiClient>(x => new ApiClient(Configuration.GetSection(Constants.HostUrl).Value.ToString(), new JsonSerializer()));
             services.AddScoped<IPeopleApiClient, PeopleApiClient>();
 
             services.AddScoped<IValidatorService<Person>, ValidatorService>();

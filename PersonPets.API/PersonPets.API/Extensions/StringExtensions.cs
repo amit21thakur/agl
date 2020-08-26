@@ -8,8 +8,8 @@ namespace PersonPets.API.Extensions
         {
             var tokens = str.Split(' ');
             StringBuilder builder = new StringBuilder();
-            
-            for(int i=0; i< tokens.Length; i++)
+
+            for (int i = 0; i < tokens.Length; i++)
             {
                 if (i > 0)
                     builder.Append(" ");
@@ -22,7 +22,7 @@ namespace PersonPets.API.Extensions
                     builder.AppendFormat("{0}{1}", lower.Substring(0, 1).ToUpper(), lower.Substring(1));
                 }
             }
-            return builder.ToString() ;
+            return builder.ToString();
         }
     }
 }
