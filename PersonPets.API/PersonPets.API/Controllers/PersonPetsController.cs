@@ -1,9 +1,10 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Threading.Tasks;
-using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PersonPets.API.Filters;
 using PersonPets.API.Services.Interfaces;
 
 namespace PersonPets.API.Controllers
@@ -22,14 +23,18 @@ namespace PersonPets.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetPetsData(string petType)
+        [ApiKeyAuth]
+        public async Task<IActionResult> GetPetsData(
+            [FromHeader(Name = Constants.ApiKeyHeaderName)]
+            [Required] string apiKey,
+            string petType)
         {
             try
             {
                 var results = await _peopleService.GetPetNamesGroupedUponOwnerGender(petType);
                 return Ok(results);
             }
-            catch(ValidationException ex)
+            catch(FluentValidation.ValidationException ex)
             {
                 _logger.LogError(ex, "Internal validaion failed while getting Pet Names data based upon owners gender");
                 return StatusCode((int)HttpStatusCode.InternalServerError);

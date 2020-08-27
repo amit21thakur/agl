@@ -30,5 +30,8 @@ namespace PersonPets.API
             "male",
             "female"
         };
+
+        public const string ApiKeyHeaderName = "person-pets-api-key";
+        public const string ApiKey = "ApiKey";
     }
 }

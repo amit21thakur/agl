@@ -6,7 +6,6 @@ using PersonPets.API.ApiClients.Interfaces;
 using PersonPets.API.Controllers;
 using PersonPets.API.Models;
 using PersonPets.API.Services;
-using PersonPets.API.Services.Interfaces;
 using PersonPets.Test.TestDataHelpers;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,7 +54,7 @@ namespace PersonPets.Test
             var peopleService = new PeopleService(peopleApiClientMock.Object, new ValidatorService(), peopleServiceLoggerMock.Object);
             var controller = new PersonPetsController(_loggerMock.Object, peopleService);
 
-            return controller.GetPetsData("cat").Result;
+            return controller.GetPetsData(string.Empty, "cat").Result;
         }
         private bool CompareListItemWise(List<PetsResult> source, List<PetsResult> target)
         {
