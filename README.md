@@ -26,7 +26,7 @@ The server part of the application is build using ASP.NET CORE 3.1
 * An ApiClient is implemented to fetch data from other web services/ APIs.
 * A Validator service is implemented to perform validation on the data models fetched from the external source.
 * PeopleService is responsible for processing the business logic and sorting the pet names and returning the data back to the controller.
-* API Key Authentication is implemented. 
+* API Key Authentication is implemented. <strong>(API Key could be found in the appsettings.json file)</strong>
 * Swagger is implemented for API documentation and Serilog logger is used for logging purposes.
  
 ### Test cases 
