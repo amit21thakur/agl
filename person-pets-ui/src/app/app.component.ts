@@ -14,11 +14,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchData('cat');
+    this.selectedType = "Cat";
+    this.fetchData();
   }
 
-  fetchData(petType:string){
-    this.petsService.getPetsData(petType).subscribe(
+  selectedType:string;
+  updatePetType(petType:string){
+    this.selectedType = petType;
+    this.fetchData();
+  }
+  fetchData(){
+    this.petsService.getPetsData(this.selectedType).subscribe(
       (response) => {
         this.petsForGender = response;
       },

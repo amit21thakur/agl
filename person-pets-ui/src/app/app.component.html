@@ -1,12 +1,26 @@
 <div class="jumbotron text-center">
-  <h1>Cats list by owner gender</h1>
+  <h1>{{selectedType}} names by owner gender</h1>
 </div>
+
 
 <div class="container">
   <div class="row">
+    <div class="col-sm-2" ></div>
+    <div class="col-sm-3" >
+      <label>Pet Species: </label>
+      <select class="form-control" (change)="updatePetType($event.target.value)">
+        <option selected> Cat</option>
+        <option>Dog</option>
+        <option>Fish</option>
+      </select>
+    </div>
+    
+  </div>
+
+  <div class="row mt-5">
         <div class="col-sm-2" ></div>
         <ng-container *ngIf="!HasError; else onError">
-          <app-pets *ngFor="let petData of petsForGender" [pets]="petData"></app-pets>
+          <app-pets class="ml-5" *ngFor="let petData of petsForGender" [pets]="petData"></app-pets>
         </ng-container>
         <ng-template #onError>
           <div class="col-sm-8 alert alert-danger" >
